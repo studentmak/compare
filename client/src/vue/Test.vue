@@ -4,7 +4,8 @@
             <select v-model="activeMode" v-on:change="modeTables()">
                 <option disabled value="" >Выберите режим</option>
                 <option>initial</option>
-                <option>Duplicates</option>
+                <option>Duplicates by id</option>
+                <option>Duplicates by title</option>
             </select>
         </header>
 
@@ -96,7 +97,7 @@ import { request } from "../api.js";
                 }
                 duplicates = [...new Set(duplicates)]
 
-                let findDuplicates = arr.filter(i => duplicates.includes(i.id))
+                let findDuplicates = arr.filter(i => duplicates.includes(i[prop]))
 
                 return findDuplicates
             },
@@ -117,14 +118,17 @@ import { request } from "../api.js";
 
             modeTables(){
                 console.log('it is work')
-                if (this.activeMode === 'Duplicates'){
+                if (this.activeMode === 'Duplicates by id'){
                     this.dataMode.dataDooglys = this.gridDataDooglys.duplicatesId
                     this.dataMode.dataTilda = this.gridDataTilda.duplicatesId
                     console.log(this.dataMode.dataTilda)
                 } else if (this.activeMode === 'initial'){
                     this.dataMode.dataDooglys = this.gridDataDooglys.initialData
                     this.dataMode.dataTilda = this.gridDataTilda.initialData
-                } 
+                } else if (this.activeMode === 'Duplicates by title'){
+                    this.dataMode.dataDooglys = this.gridDataDooglys.duplicatesTitle
+                    this.dataMode.dataTilda = this.gridDataTilda.duplicatesTitle
+                }
                 else {
                     this.dataMode.dataDooglys = this.gridDataDooglys.initialData
                     this.dataMode.dataTilda = this.gridDataTilda.initialData
@@ -139,6 +143,8 @@ import { request } from "../api.js";
             await this.getData()
             this.gridDataDooglys.duplicatesId = this.Duplicates(this.gridDataDooglys.initialData, 'id')
             this.gridDataTilda.duplicatesId = this.Duplicates(this.gridDataTilda.initialData, 'id')
+            this.gridDataDooglys.duplicatesTitle = this.Duplicates(this.gridDataDooglys.initialData, 'title')
+            this.gridDataTilda.duplicatesTitle = this.Duplicates(this.gridDataTilda.initialData, 'title')
             this.modeTables()
             console.log(this.gridDataDooglys.duplicatesId, this.gridDataTilda.duplicatesId)
         },
