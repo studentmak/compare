@@ -4,7 +4,7 @@ import fs from 'fs';
 
 export function convertExcelDooglysToJson (){
     const result = excelToJson({
-        source: fs.readFileSync('./Data/Dooglys.xlsx'), //Add the data file to the "Data" directory and name it "Dooglys" with the extension ".xlsx"
+        source: fs.readFileSync('./Data/Dooglys/Dooglys.xlsx'), //Add the data file to the "Data" directory and name it "Dooglys" with the extension ".xlsx"
         header: {
             rows: 1
         },
@@ -22,7 +22,7 @@ export function convertExcelDooglysToJson (){
 
 export function convertExcelTildaToJson (){
     const result = excelToJson({
-        source: fs.readFileSync('./Data/Tilda.xlsx'), //Add the data file to the "Data" directory and name it "Tilda" with the extension ".xlsx"
+        source: fs.readFileSync('./Data/Tilda/Tilda.xlsx'), //Add the data file to the "Data" directory and name it "Tilda" with the extension ".xlsx"
         header: {
             rows: 1
         },
@@ -31,6 +31,23 @@ export function convertExcelTildaToJson (){
             O: "id",
             F: "title",
             J: "price"
+        },
+    }) 
+    let objectName = Object.keys(result)[0]
+    let value = result[objectName]
+    return value
+}
+
+export function convertExcelToJson (path, name){
+    const result = excelToJson({
+        source: fs.readFileSync(`./Data/${path}/${name}`), //Add the data file to the "Data" directory and name it "Tilda" with the extension ".xlsx"
+        header: {
+            rows: 1
+        },
+        columnToKey: {
+            A: "uid",
+            O: "id",
+            F: "title",
         },
     }) 
     let objectName = Object.keys(result)[0]
