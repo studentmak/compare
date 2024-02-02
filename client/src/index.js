@@ -5,7 +5,7 @@ import Test from './vue/Test.vue'
 
 const router = createRouter({
   routes: [
-    {path: '/', component: Test}
+    {path: '/', component: Main}
   ],
   history: createWebHistory()
 })
