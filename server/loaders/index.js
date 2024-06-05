@@ -1,13 +1,9 @@
-import { writeFilesConverterExcelToJson } from "../parser.js";
 import { Routers } from "../routers/index.js";
 import { bodyParserLoader } from "./bodyParserLoader.js";
 import { configLoader } from "./configLoader.js";
 import { useCors } from "./cors.js";
 import { listeningPort } from "./port.js";
 import morgan from "morgan"
-
-
-writeFilesConverterExcelToJson()
 
 export function loaders(app){
     configLoader()
