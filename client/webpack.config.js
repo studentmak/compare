@@ -1,5 +1,5 @@
 const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
+const { VueLoaderPlugin, default: loader } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 
@@ -38,6 +38,12 @@ module.exports = {
           {
             test: /\.x$/,
             loader:"webpack-xlsx-loader"
+          },
+
+
+          {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
           },
 
           {
