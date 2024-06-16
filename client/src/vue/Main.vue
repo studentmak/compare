@@ -32,6 +32,7 @@
   position: relative;
   width: 320px;
   margin: 100px auto 0 auto;
+  height: 300px ;
 }
 
 .carousel {
