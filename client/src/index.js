@@ -13,6 +13,8 @@ import News5 from './vue/news/News5.vue'
 import News6 from './vue/news/News6.vue'
 
 const router = createRouter({
+  mode: 'history',
+  history: createWebHistory(),
   routes: [
     {path: '/', component: Main, name: 'Main'},
     {path: '/news', component: News, name: 'News'},
@@ -25,7 +27,7 @@ const router = createRouter({
     {path: '/news5', component: News5},
     {path: '/news6', component: News6},
   ],
-  history: createWebHistory()
+  
 })
 
 createApp(App)

@@ -11,16 +11,15 @@ module.exports = {
     },
 
     devServer: {
+      historyApiFallback:{
+        index: '/index.html'
+    },
       proxy: {
-        '/':'http://localhost:3000/'
-      }
+        // '/':'http://localhost:3000/'
+      },
     },
 
-    resolve:{
-        fallback: {
-          util: require.resolve("util/")
-        }
-    },
+   
     module: {
         rules: [
           {

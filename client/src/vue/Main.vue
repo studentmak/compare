@@ -1,14 +1,23 @@
 <template>
+  <div>
     <div class="container">
         <div class="carousel">
             <div class="carousel__face"><img src="../photo/glavnoe.png"></div>
             <div class="carousel__face"><img src="../photo/glav.png"></div>
             <div class="carousel__face"><img src="../photo/glavnoe_foto.png"></div>
             <div class="carousel__face"><img src="../photo/dYDFT5tPmIM.png"></div>
-            <div class="carousel__face"><img src="../photo/b3WkXi-Mz28.png"></div>
+            <div class="carousel__face"><img src="../photo/4Qj5VCoE0lA.png"></div>
             <div class="carousel__face"><img src="../photo/foto3.png"></div>
-            
+            <div class="carousel__face"><img src="../photo/70qeV_7fDk8.png"></div>
+            <div class="carousel__face"><img src="../photo/oqGBEp-VB1k.png"></div>
+            <div class="carousel__face"><img src="../photo/photo_5258346577121106240_y.png"></div>
+            <div class="carousel__face"><img src="../photo/U9SOEvbE5Bs.png"></div>
         </div>
+        
+    </div>
+      <div class="main-text">
+          <p>Творческие коллективы</p>
+      </div>
     </div>
 </template>
 
@@ -97,6 +106,15 @@ span {
   to {
     transform: rotateY(-360deg);
   }
+}
+
+.main-text {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-size: 50px;
+  letter-spacing: 10px;
+  font-style: oblique;
 }
 
 </style>
