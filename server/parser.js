@@ -78,7 +78,7 @@ function writeFiles(name, path, property, name_category){
 
     let result = [...fourth_scan, ...fifth_scan]
     
-    fs.writeFile(`/Users/majarik/Desktop/12345/${name_category}.txt`, JSON.stringify(result), 
+    fs.writeFile(`./Data/${name_category}.txt`, JSON.stringify(result), 
     err =>{
     if (err){
         console.error(err)
